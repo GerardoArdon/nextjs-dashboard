@@ -6,6 +6,7 @@ import type { User } from '@/app/lib/definitions';
 import bcrypt from 'bcryptjs';
 import postgres from 'postgres';
 
+
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 async function getUser(email: string): Promise<User | undefined> {
@@ -17,6 +18,8 @@ async function getUser(email: string): Promise<User | undefined> {
     throw new Error('Failed to fetch user.');
   }
 }
+
+
 
 export const { auth, signIn, signOut } = NextAuth({
   ...authConfig,

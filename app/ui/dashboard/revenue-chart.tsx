@@ -4,7 +4,7 @@ import { lusitana } from '@/app/ui/fonts';
 import { fetchRevenue } from '@/app/lib/data';
 
 export default async function RevenueChart() {
-  const revenue = await fetchRevenue(); // ahora se hace el fetch directamente aquí
+  const revenue = await fetchRevenue(); 
 
   const chartHeight = 350;
   const { yAxisLabels, topLabel } = generateYAxis(revenue);
